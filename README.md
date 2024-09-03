@@ -2,29 +2,32 @@
 
 [![License: CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-sa/4.0/)
 
+# Overview
+
+![concept](images/concept.jpg)
+![model](images/model_archi.jpg)
+
 # Installation
 
 Since `Microclimate Vision` uses `pytorch` and `torchvision`, you may need to install them separately. Please refer to the [official website](https://pytorch.org/get-started/locally/) for installation instructions.
 
 # Usage
 
-## Preparation
+## Data preparation
 Please refer to the sample files in the "data" directory. Note that these sample files do not contain observed real data, but rather virtual data created to demonstrate the proper data structure.
-### Microclimate data
 
-<main>
+![data](images/examle_datapoint.jpg)
 
-<reference>
-
-### Panoramic imagery
-### Satellite imagery
 ### Config file
 
 ## Training
+```
 python train.py --config path/to/config
-
+```
 ## Test
+```
 python test.py --config path/to/config --model path/to/model --result path/to/result
+```
 
 # License
 
