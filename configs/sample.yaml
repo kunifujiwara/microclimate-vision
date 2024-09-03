@@ -2,17 +2,17 @@
 "cnn_feature_dim": 128
 "cnn_layernorm": true
 "cnn_subtract": false
-"dataset_basename": "clearsky_panosate_AH"
-"dataset_name_s": "ref_sequence_AH_NUS"
-"dataset_root": "./data/processed"
+"training_data_path": "data/microclimate/training_sample.csv"
+"validation_data_path": "data/microclimate/validation_sample.csv"
+"test_data_path": "data/microclimate/test_sample.csv"
+"sequence_data_path": "data/microclimate/sequence_sample.csv"
 "dataset_standard": "train"
 "debug": false
 "device": "cuda"
-"dropwss": ["WS_03", "WS_13"]
 "eval_batch_size": 128
 "input_scaling": true
 "input_weather": ["air tem", "RH", "wind speed", "solar radiation"]
-"log_root": "./logs/test5"
+"log_dir": "./logs/test"
 "loss_function": "MSE"
 "lr_factor": 0.1
 "lr_initial": 0.0001
@@ -28,28 +28,27 @@
 "lstm_sequence_length": 24
 "lstm_zero_init": true
 "min_lr": 1.0e-07
-"model": "MCVisionNet_panosate_v2"
+"model": "MCVisionNet_sate"
 "momentum": 0.9
 "n_gpu": 1
 "num_workers": 1
 "numerical_inputs": ["air tem", "RH", "wind speed", "solar radiation"]
 "optimizer": "Adam"
 "output_scaling": true
-"pano_folder": "./data/processed/panorama/fixposi_128_256"
-"pano_map_folder": "./data/processed/pano_map_128_256"
+"pano_folder": "./data/panorama"
+"pano_map_folder": "./data/panorama"
 "pano_x": 256
 "pano_y": 128
 "regressor_dropout_ratio": 0.0
-"sate_folder": "./data/processed/satellite/mapbox_128_256"
-"sate_x": 256
+"sate_folder": "./data/satellite"
+"sate_x": 128
 "sate_y": 128
 "save_interval": 50
 "scaling_type": "standard"
 "scheduler": "ReduceLROnPlateau"
 "seed": 2020
-"tag": "clearsky_panosate_128_256_tune_input"
+"tag": "sample"
 "target_weather": "air tem"
-"test_type": "test2"
 "train_batch_size": 128
 "train_max_epochs": 100
 "tune_hyperparameters": true

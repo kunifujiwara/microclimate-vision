@@ -181,23 +181,12 @@ def output_robust_z_scaling(df_target, tcol_t, df_standard, tcol_s):
 
 def read_data(args, process_type):
 
-    suffix = ""
-    for dropWS in args.dropwss:
-        suffix = suffix + f'_{dropWS}'
-    suffix = suffix + f"_{process_type}"
-
-    data = pd.read_csv(os.path.join(args.dataset_root, "microclimate", args.dataset_basename + f"{suffix}.csv"))
-
-    return data
-
-def read_data_sequence(args, process_type):
-
-    suffix = ""
-    for dropWS in args.dropwss:
-        suffix = suffix + f'_{dropWS}'
-    suffix = suffix + f"_{process_type}"
-    
-    data = pd.read_csv(os.path.join(args.dataset_root, "microclimate", "sequence_"+args.dataset_basename + f"{suffix}.csv"))
+    if process_type == "train":
+        data = pd.read_csv(args.training_data_path)
+    elif process_type == "val":
+        data = pd.read_csv(args.validation_data_path)
+    elif process_type == "test":            
+        data = pd.read_csv(args.test_data_path)
 
     return data
 

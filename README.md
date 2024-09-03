@@ -8,12 +8,23 @@ Since `Microclimate Vision` uses `pytorch` and `torchvision`, you may need to in
 
 # Usage
 
-## Preparation of dataset
-### Structure of dataset
+## Preparation
+Please refer to the sample files in the "data" directory. Note that these sample files do not contain observed real data, but rather virtual data created to demonstrate the proper data structure.
+### Microclimate data
+
+<main>
+
+<reference>
+
+### Panoramic imagery
+### Satellite imagery
+### Config file
 
 ## Training
+python train.py --config path/to/config
 
 ## Test
+python test.py --config path/to/config --model path/to/model --result path/to/result
 
 # License
 

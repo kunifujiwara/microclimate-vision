@@ -14,7 +14,7 @@ from datasets.mcvision_dataset import MCVisionDataset
 from .modelutils import get_train_mean_std, get_val_rmse_baseline, get_optimizer, get_scheduler, get_log_loss_metrics, log_loss_average
 
 ############
-class MCVisionNet_pano_v2(nn.Module):
+class MCVisionNet_pano(nn.Module):
     def __init__(self, args):
         super().__init__()
         self.args = args

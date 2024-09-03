@@ -44,7 +44,7 @@ class MCVisionNet_sate(nn.Module):
         if self.args.cnn_subtract: 
             lin_proj_in_dim = 4096 * self.coef
         else:             
-            lin_proj_in_dim = 4096 * 2 * self.coef
+            lin_proj_in_dim = 4096 * 4 * self.coef
             if args.cnn_architecture == "resnet50":
                 self.cnn2 = models.resnet50()
             elif args.cnn_architecture == "resnet18":
@@ -96,13 +96,13 @@ class MCVisionNet_sate(nn.Module):
         batch_size = numerical.shape[0]
         
         x1 = self.cnn1(sate1)
-        x1 = x1.reshape(batch_size, self.args.lstm_ft_map_size,512*self.coef)
+        x1 = x1.reshape(batch_size, self.args.lstm_ft_map_size,1024*self.coef)
 
         if self.args.cnn_subtract: 
             x2 = self.cnn1(sate2)
         else:
             x2 = self.cnn2(sate2)
-        x2 = x2.reshape(batch_size, self.args.lstm_ft_map_size,512*self.coef)
+        x2 = x2.reshape(batch_size, self.args.lstm_ft_map_size,1024*self.coef)
         
         # initialize with the average of both sates
         (h0_x1,c0_x1) = self.initHidden(batch_size=batch_size, enc_im=x1)

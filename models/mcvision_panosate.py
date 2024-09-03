@@ -42,7 +42,7 @@ class MCVisionNet_panosate(nn.Module):
         if self.args.cnn_subtract: 
             lin_proj_in_dim = 4096 * 2 * self.coef
         else:             
-            lin_proj_in_dim = 4096 * 2 * 2 * self.coef
+            lin_proj_in_dim = 4096 * 2 * self.coef + 4096 * self.coef
             if args.cnn_architecture == "resnet50":
                 self.pcnn2 = models.resnet50()
                 self.scnn2 = models.resnet50()
@@ -105,10 +105,11 @@ class MCVisionNet_panosate(nn.Module):
         else:
             px2 = self.pcnn2(pano2) 
             sx2 = self.scnn2(sate2)
+
         px1 = px1.reshape(batch_size, self.args.lstm_ft_map_size, 512*self.coef)
         px2 = px2.reshape(batch_size, self.args.lstm_ft_map_size, 512*self.coef)
-        sx1 = sx1.reshape(batch_size, self.args.lstm_ft_map_size, 512*self.coef)
-        sx2 = sx2.reshape(batch_size, self.args.lstm_ft_map_size, 512*self.coef)
+        sx1 = sx1.reshape(batch_size, self.args.lstm_ft_map_size, 256*self.coef)
+        sx2 = sx2.reshape(batch_size, self.args.lstm_ft_map_size, 256*self.coef)
 
         # initialize with the average of both panos
         (h0_x1,c0_x1) = self.initHidden(batch_size=batch_size, penc_im=px1, senc_im=sx1)###############################################################################

@@ -11,11 +11,7 @@ from types import SimpleNamespace
 
 def get_train_mean_std(args):
 
-    suffix = ""
-    for dropWS in args.dropwss:
-        suffix = suffix + f'_{dropWS}'
-    suffix = suffix + f"_train"
-    data_train = pd.read_csv(os.path.join(args.dataset_root, "microclimate", args.dataset_basename + f"{suffix}.csv"))
+    data_train = pd.read_csv(args.training_data_path)
     tcol = data_train.columns.get_loc(args.target_weather+'_target')
     col_to_output_scale_s = data_train.columns[tcol]
     mean = data_train[col_to_output_scale_s].mean()
@@ -25,11 +21,7 @@ def get_train_mean_std(args):
 
 def get_val_rmse_baseline(args):
 
-    suffix = ""
-    for dropWS in args.dropwss:
-        suffix = suffix + f'_{dropWS}'
-    suffix = suffix + f"_{args.val_type}"
-    data_val = pd.read_csv(os.path.join(args.dataset_root, "microclimate", args.dataset_basename + f"{suffix}.csv"))
+    data_val = pd.read_csv(args.validation_data_path)
     mse = mean_squared_error(data_val[args.target_weather+'_reference'], data_val[args.target_weather+'_target'])
 
     return np.sqrt(mse)
@@ -521,11 +513,7 @@ def get_error_metrix(args, outputs, targets, standard, coefficient):
 
 def get_train_stan_coef(args):
 
-    suffix = ""
-    for dropWS in args.dropwss:
-        suffix = suffix + f'_{dropWS}'
-    suffix = suffix + f"_train"
-    data_train = pd.read_csv(os.path.join(args.dataset_root, "microclimate", args.dataset_basename + f"{suffix}.csv"))
+    data_train = pd.read_csv(args.training_data_path)
     tcol = data_train.columns.get_loc(args.target_weather+'_target')
     col_to_output_scale_s = data_train.columns[tcol]
     if args.scaling_type == "standard":
@@ -538,12 +526,7 @@ def get_train_stan_coef(args):
     return stan, coef
 
 def get_rmse_baseline(args, process_type):
-
-    suffix = ""
-    for dropWS in args.dropwss:
-        suffix = suffix + f'_{dropWS}'
-    suffix = suffix + f"_{process_type}"
-    data_val = pd.read_csv(os.path.join(args.dataset_root, "microclimate", args.dataset_basename + f"{suffix}.csv"))
+    data_val = pd.read_csv(args.test_data_path)
     mse = mean_squared_error(data_val[args.target_weather+'_reference'], data_val[args.target_weather+'_target'])
 
     return np.sqrt(mse)
