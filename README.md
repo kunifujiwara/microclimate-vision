@@ -9,7 +9,7 @@ You can read more about this project on [its website](https://ual.sg/publication
 
 The journal paper can be found [here](https://doi.org/10.1016/j.scs.2024.105733). 
 
-
+The task of the model is predicting microclimate data at a target location based on microclimate data at a reference location and imagery inputs.
 
 ![concept](images/concept.jpg)
 
@@ -26,9 +26,13 @@ Since `Microclimate Vision` uses `pytorch` and `torchvision`, you may need to in
 ## Data preparation
 Please refer to the sample files in the "data" directory. Note that these sample files do not contain observed real data, but rather virtual data created to demonstrate the proper data structure.
 
+You need to create a dataset integrating microclimate data with street-level and satellite imagery.
+
 ![data](images/examle_datapoint.jpg)
 
 ### Config file
+
+The detailed settings, e.g., hyperparameters of the model and paths to dataset files, are specified in a config file. Please refer to 'configs/sample.yaml'.
 
 ## Training
 ```
