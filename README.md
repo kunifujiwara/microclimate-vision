@@ -3,8 +3,16 @@
 [![License: CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 # Overview
+Repository for the code used for multimodal prediction of climatic parameters using street-level and satellite imagery, developed by the [Urban Analytics Lab (UAL)](https://ual.sg/) at the National University of Singapore (NUS).
+
+You can read more about this project on [its website](https://ual.sg/publication/2024-scs-microclimate-vision/) too.The journal paper can be found [here](https://doi.org/10.1016/j.scs.2024.105733). 
+
+
 
 ![concept](images/concept.jpg)
+
+This model consists of LSTM and ResNet-18 architectures, and predicts air temperature T$_{air}$, relative humidity $RH$, wind speed $\nu$, and global horizontal irradiance $GHI$.
+
 ![model](images/model_archi.jpg)
 
 # Installation
