@@ -46,7 +46,7 @@ python test.py --config path/to/config --model path/to/model --result path/to/re
 
 `Microclimate Vision` was created by Kunihiko Fujiwara. It is licensed under the terms of the CC BY-SA 4.0.
 
-# Paper / Attribution / Citation
+# Citation
 
 Please cite the [paper](https://doi.org/10.1016/j.scs.2024.105733) if you use `Microclimate Vision` in a scientific publication:
 
