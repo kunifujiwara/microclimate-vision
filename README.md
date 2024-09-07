@@ -3,7 +3,7 @@
 
 [![License: CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-# Overview
+## Overview
 Repository for the code used for multimodal prediction of climatic parameters using street-level and satellite imagery, developed by the [Urban Analytics Lab (UAL)](https://ual.sg/) at the National University of Singapore (NUS).
 
 You can read more about this project on [its website](https://ual.sg/publication/2024-scs-microclimate-vision/) too.
@@ -18,35 +18,35 @@ This model consists of LSTM and ResNet-18 architectures, and predicts air temper
 
 ![model](images/model_archi.jpg)
 
-# Installation
+## Installation
 
 Since `Microclimate Vision` uses `pytorch` and `torchvision`, you may need to install them separately. Please refer to the [official website](https://pytorch.org/get-started/locally/) for installation instructions.
 
-# Usage
+## Usage
 
-## Data preparation
+### Data preparation
 You need to create a dataset integrating microclimate data with street-level and satellite imagery. Please refer to the sample files in the "data" directory. Note that these sample files do not contain observed real data, but rather virtual data created to demonstrate the proper data structure.
 
 ![data](images/examle_datapoint.jpg)
 
-### Config file
+#### Config file
 
 The detailed settings, e.g., hyperparameters of the model and paths to dataset files, are specified in a config file. Please refer to 'configs/sample.yaml'.
 
-## Training
+### Training
 ```
 python train.py --config path/to/config
 ```
-## Test
+### Test
 ```
 python test.py --config path/to/config --model path/to/model --result path/to/result
 ```
 
-# License
+## License
 
 `Microclimate Vision` was created by Kunihiko Fujiwara. It is licensed under the terms of the CC BY-SA 4.0.
 
-# Citation
+## Citation
 
 Please cite the [paper](https://doi.org/10.1016/j.scs.2024.105733) if you use `Microclimate Vision` in a scientific publication:
 
