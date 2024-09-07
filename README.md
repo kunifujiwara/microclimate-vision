@@ -1,4 +1,5 @@
-![Logo](/images/logo_microclimate-vision.svg)
+# Microclimate Vision
+<!-- ![Logo](/images/logo_microclimate-vision.svg) -->
 
 [![License: CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-sa/4.0/)
 
@@ -24,9 +25,7 @@ Since `Microclimate Vision` uses `pytorch` and `torchvision`, you may need to in
 # Usage
 
 ## Data preparation
-Please refer to the sample files in the "data" directory. Note that these sample files do not contain observed real data, but rather virtual data created to demonstrate the proper data structure.
-
-You need to create a dataset integrating microclimate data with street-level and satellite imagery.
+You need to create a dataset integrating microclimate data with street-level and satellite imagery. Please refer to the sample files in the "data" directory. Note that these sample files do not contain observed real data, but rather virtual data created to demonstrate the proper data structure.
 
 ![data](images/examle_datapoint.jpg)
 
