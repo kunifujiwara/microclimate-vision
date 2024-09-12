@@ -63,3 +63,12 @@ Fujiwara, K., Khomiakov, M., Yap, W., Ignatius, M., & Biljecki, F. (2024). Micro
  year = {2024}
 }
 ```
+
+--------------------------------------------------------------------------------
+<br>
+<br>
+<p align="center">
+  <a href="https://ual.sg/">
+    <img src="https://raw.githubusercontent.com/winstonyym/urbanity/main/images/ualsg.jpeg" width = 55% alt="Logo">
+  </a>
+</p>
