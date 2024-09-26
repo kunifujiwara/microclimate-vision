@@ -20,7 +20,7 @@ This model consists of LSTM and ResNet-18 architectures, and predicts air temper
 
 ## Installation
 
-### pytorch and torchvision
+### PyTorch and torchvision
 Since `Microclimate Vision` uses `pytorch` and `torchvision`, you may need to install them separately. Please refer to the [official website](https://pytorch.org/get-started/locally/) for installation instructions.
 
 ### Dependencies
@@ -30,7 +30,9 @@ conda/mamba env -f environment.yml
 ```
 
 The environment is named microclimate-vision, to navigate to it, use:
+```
 conda/mamba activate microclimate-vision
+```
 
 ## Usage
 
