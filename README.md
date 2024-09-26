@@ -77,7 +77,7 @@ Fujiwara, K., Khomiakov, M., Yap, W., Ignatius, M., & Biljecki, F. (2024). Micro
 ```
 ## Credits 
 
-- environment.yml: [Desai Wang](https://github.com/desaiwang)
+- Creation of environment.yml: [Desai Wang](https://github.com/desaiwang)
 
 --------------------------------------------------------------------------------
 <br>
